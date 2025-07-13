@@ -18,6 +18,7 @@
             --warning: #ff9800;
             --danger: #f44336;
             --border: #3a3a3a;
+            --purple: #9c27b0;
         }
         
         * {
@@ -32,6 +33,9 @@
             color: var(--text-primary);
             min-height: 100vh;
             padding: 20px;
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(40, 40, 60, 0.1) 0%, rgba(40, 40, 60, 0) 20%),
+                radial-gradient(circle at 90% 80%, rgba(30, 30, 50, 0.1) 0%, rgba(30, 30, 50, 0) 20%);
         }
         
         .container {
@@ -42,27 +46,44 @@
         header {
             text-align: center;
             padding: 30px 0;
-            border-bottom: 1px solid var(--border);
             margin-bottom: 30px;
+            position: relative;
+        }
+        
+        .header-content {
+            background: rgba(30, 30, 40, 0.7);
+            padding: 25px;
+            border-radius: 15px;
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(74, 134, 232, 0.3);
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.5);
         }
         
         header h1 {
-            font-size: 2.5rem;
+            font-size: 2.8rem;
             margin-bottom: 10px;
-            color: var(--accent);
+            background: linear-gradient(to right, #4a86e8, #9c27b0);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.2);
         }
         
         header p {
             color: var(--text-secondary);
             font-size: 1.1rem;
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.6;
         }
         
         .input-section {
             background-color: var(--bg-secondary);
-            border-radius: 10px;
+            border-radius: 15px;
             padding: 25px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
             margin-bottom: 30px;
+            border: 1px solid var(--border);
         }
         
         .input-group {
@@ -74,6 +95,13 @@
             margin-bottom: 8px;
             font-weight: 500;
             color: var(--text-primary);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .input-group label i {
+            color: var(--accent);
         }
         
         .input-group input {
@@ -84,18 +112,20 @@
             background-color: var(--bg-tertiary);
             color: var(--text-primary);
             font-size: 1rem;
-            transition: border-color 0.3s;
+            transition: all 0.3s;
         }
         
         .input-group input:focus {
             border-color: var(--accent);
             outline: none;
+            box-shadow: 0 0 0 2px rgba(74, 134, 232, 0.2);
         }
         
         .input-group .hint {
             font-size: 0.85rem;
             color: var(--text-secondary);
             margin-top: 6px;
+            padding-left: 26px;
         }
         
         .dork-types {
@@ -117,6 +147,8 @@
         }
         
         .dork-type:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
             border-color: var(--accent);
         }
         
@@ -139,7 +171,7 @@
         }
         
         .btn {
-            padding: 12px 24px;
+            padding: 14px 28px;
             border-radius: 8px;
             border: none;
             font-size: 1rem;
@@ -148,41 +180,52 @@
             transition: all 0.3s;
             display: flex;
             align-items: center;
-            gap: 8px;
+            gap: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 10px rgba(0,0,0,0.15);
+        }
+        
+        .btn:active {
+            transform: translateY(1px);
         }
         
         .btn-primary {
-            background-color: var(--accent);
+            background: linear-gradient(to right, #4a86e8, #5e35b1);
             color: white;
         }
         
         .btn-primary:hover {
-            background-color: var(--accent-hover);
+            background: linear-gradient(to right, #5a96f8, #7e57c2);
         }
         
         .btn-secondary {
-            background-color: var(--bg-tertiary);
+            background: linear-gradient(to right, #424242, #333);
             color: var(--text-primary);
         }
         
         .btn-secondary:hover {
-            background-color: #3a3a3a;
+            background: linear-gradient(to right, #4a4a4a, #444);
         }
         
         .btn-success {
-            background-color: var(--success);
+            background: linear-gradient(to right, #2e7d32, #1b5e20);
             color: white;
         }
         
         .btn-success:hover {
-            background-color: #5cb860;
+            background: linear-gradient(to right, #388e3c, #2e7d32);
         }
         
         .dorks-container {
             background-color: var(--bg-secondary);
-            border-radius: 10px;
+            border-radius: 15px;
             padding: 25px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+            border: 1px solid var(--border);
         }
         
         .dorks-header {
@@ -194,7 +237,10 @@
         
         .dorks-header h2 {
             font-size: 1.8rem;
-            color: var(--accent);
+            background: linear-gradient(to right, #4a86e8, #9c27b0);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
         }
         
         .dorks-list {
@@ -210,6 +256,11 @@
             border-bottom: 1px solid var(--border);
             display: flex;
             align-items: center;
+            transition: background-color 0.2s;
+        }
+        
+        .dork-item:hover {
+            background-color: rgba(74, 134, 232, 0.1);
         }
         
         .dork-item:last-child {
@@ -218,6 +269,7 @@
         
         .dork-item input {
             margin-right: 15px;
+            cursor: pointer;
         }
         
         .dork-text {
@@ -234,20 +286,30 @@
             color: var(--text-secondary);
         }
         
+        .no-dorks i {
+            font-size: 3rem;
+            margin-bottom: 15px;
+            opacity: 0.5;
+        }
+        
         .select-all {
             display: flex;
             align-items: center;
             gap: 10px;
             margin-bottom: 15px;
+            padding: 8px 15px;
+            background-color: rgba(74, 134, 232, 0.1);
+            border-radius: 8px;
         }
         
         .counter {
-            background-color: var(--accent);
+            background: linear-gradient(to right, #4a86e8, #9c27b0);
             color: white;
-            padding: 3px 8px;
-            border-radius: 12px;
-            font-size: 0.85rem;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.9rem;
             font-weight: 600;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
         }
         
         .footer {
@@ -257,6 +319,29 @@
             font-size: 0.9rem;
             margin-top: 30px;
             border-top: 1px solid var(--border);
+        }
+        
+        .notification {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            padding: 15px 25px;
+            border-radius: 8px;
+            background-color: var(--success);
+            color: white;
+            font-weight: 500;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            transform: translateX(200%);
+            transition: transform 0.3s ease-out;
+            z-index: 1000;
+        }
+        
+        .notification.show {
+            transform: translateX(0);
+        }
+        
+        .notification.error {
+            background-color: var(--danger);
         }
         
         @media (max-width: 768px) {
@@ -272,31 +357,39 @@
                 width: 100%;
                 justify-content: center;
             }
+            
+            header h1 {
+                font-size: 2.2rem;
+            }
         }
     </style>
 </head>
 <body>
+    <div class="notification" id="notification">Dorks generated successfully!</div>
+    
     <div class="container">
         <header>
-            <h1><i class="fas fa-search"></i> Google Dork Generator</h1>
-            <p>Generate specialized Google search queries for penetration testing and security research</p>
+            <div class="header-content">
+                <h1><i class="fas fa-search"></i> Google Dork Generator</h1>
+                <p>Generate specialized Google search queries for penetration testing and security research. Enter keywords and a website URL to create powerful dork combinations.</p>
+            </div>
         </header>
         
         <main>
             <section class="input-section">
                 <div class="input-group">
-                    <label for="keywords">Keywords (comma separated)</label>
-                    <input type="text" id="keywords" placeholder="admin, login, password, config...">
-                    <div class="hint">Enter search terms separated by commas</div>
+                    <label for="keywords"><i class="fas fa-key"></i> Keywords (comma separated)</label>
+                    <input type="text" id="keywords" placeholder="admin, login, password, config..." value="admin, login">
+                    <div class="hint">Enter search terms separated by commas (e.g., "admin, login, password")</div>
                 </div>
                 
                 <div class="input-group">
-                    <label for="website">Website URL</label>
-                    <input type="text" id="website" placeholder="example.com">
-                    <div class="hint">Enter the domain you want to search within</div>
+                    <label for="website"><i class="fas fa-globe"></i> Website URL</label>
+                    <input type="text" id="website" placeholder="example.com" value="example.com">
+                    <div class="hint">Enter the domain you want to search within (e.g., "example.com")</div>
                 </div>
                 
-                <h3>Select Dork Types:</h3>
+                <h3><i class="fas fa-list"></i> Select Dork Types:</h3>
                 <div class="dork-types">
                     <div class="dork-type">
                         <input type="checkbox" id="site" checked>
@@ -327,11 +420,11 @@
                         <label for="intitle">intitle:</label>
                     </div>
                     <div class="dork-type">
-                        <input type="checkbox" id="filetype">
+                        <input type="checkbox" id="filetype" checked>
                         <label for="filetype">filetype:</label>
                     </div>
                     <div class="dork-type">
-                        <input type="checkbox" id="ext">
+                        <input type="checkbox" id="ext" checked>
                         <label for="ext">ext:</label>
                     </div>
                     <div class="dork-type">
@@ -372,7 +465,7 @@
             
             <section class="dorks-container">
                 <div class="dorks-header">
-                    <h2>Generated Dorks</h2>
+                    <h2><i class="fas fa-list-ul"></i> Generated Dorks</h2>
                     <div class="counter" id="dork-counter">0 dorks</div>
                 </div>
                 
@@ -383,7 +476,7 @@
                 
                 <div class="dorks-list" id="dorks-list">
                     <div class="no-dorks">
-                        <i class="fas fa-search fa-2x"></i>
+                        <i class="fas fa-search"></i>
                         <p>Enter keywords and a website, then click "Generate Dorks"</p>
                     </div>
                 </div>
@@ -417,6 +510,7 @@
             const selectAllTypesBtn = document.getElementById('select-all-types');
             const selectAllDorks = document.getElementById('select-all-dorks');
             const dorkCounter = document.getElementById('dork-counter');
+            const notification = document.getElementById('notification');
             
             // Dork types
             const dorkTypes = [
@@ -429,11 +523,28 @@
             // File types for filetype dork
             const fileTypes = ['pdf', 'doc', 'docx', 'xls', 'xlsx', 'ppt', 'pptx', 'txt', 'log', 'sql', 'db', 'bak', 'cfg', 'conf', 'ini', 'xml', 'json'];
             
+            // Show notification
+            function showNotification(message, isError = false) {
+                notification.textContent = message;
+                notification.className = 'notification';
+                
+                if (isError) {
+                    notification.classList.add('error');
+                }
+                
+                notification.classList.add('show');
+                
+                setTimeout(() => {
+                    notification.classList.remove('show');
+                }, 3000);
+            }
+            
             // Select all dork types
             selectAllTypesBtn.addEventListener('click', function() {
                 dorkTypes.forEach(type => {
                     document.getElementById(type).checked = true;
                 });
+                showNotification('All dork types selected!');
             });
             
             // Generate dorks
@@ -442,7 +553,7 @@
                 const website = websiteInput.value.trim();
                 
                 if (keywords.length === 0 || !website) {
-                    alert('Please enter at least one keyword and a website URL');
+                    showNotification('Please enter at least one keyword and a website URL', true);
                     return;
                 }
                 
@@ -513,7 +624,7 @@
                 
                 // Display dorks
                 if (dorks.length === 0) {
-                    dorksList.innerHTML = '<div class="no-dorks"><i class="fas fa-exclamation-triangle fa-2x"></i><p>No dorks generated. Please select at least one dork type.</p></div>';
+                    dorksList.innerHTML = '<div class="no-dorks"><i class="fas fa-exclamation-triangle"></i><p>No dorks generated. Please select at least one dork type.</p></div>';
                 } else {
                     dorks.forEach((dork, index) => {
                         const dorkItem = document.createElement('div');
@@ -535,6 +646,8 @@
                 document.querySelectorAll('.dork-checkbox').forEach(checkbox => {
                     checkbox.addEventListener('change', updateOpenButtonState);
                 });
+                
+                showNotification(`Generated ${dorks.length} dorks successfully!`);
             });
             
             // Select all dorks
@@ -555,21 +668,28 @@
             // Open selected dorks in new tabs
             openTabsBtn.addEventListener('click', function() {
                 const checkedBoxes = document.querySelectorAll('.dork-checkbox:checked');
+                const dorks = Array.from(checkedBoxes).map(box => box.nextElementSibling.textContent);
                 
-                checkedBoxes.forEach(box => {
-                    const dorkText = box.nextElementSibling.textContent;
-                    const searchUrl = `https://www.google.com/search?q=${encodeURIComponent(dorkText)}`;
-                    window.open(searchUrl, '_blank');
+                if (dorks.length === 0) return;
+                
+                // Open each dork in a new tab with a slight delay to prevent blocking
+                dorks.forEach((dork, index) => {
+                    setTimeout(() => {
+                        const searchUrl = `https://www.google.com/search?q=${encodeURIComponent(dork)}`;
+                        window.open(searchUrl, '_blank');
+                    }, index * 300); // 300ms delay between each tab
                 });
+                
+                showNotification(`Opening ${dorks.length} dorks in new tabs...`);
             });
             
             // Export to TXT
             exportBtn.addEventListener('click', function() {
                 const dorkItems = document.querySelectorAll('.dork-text');
-                let dorkText = '';
+                let dorkText = 'Generated Google Dorks:\n\n';
                 
-                dorkItems.forEach(item => {
-                    dorkText += item.textContent + '\n';
+                dorkItems.forEach((item, index) => {
+                    dorkText += `${index + 1}. ${item.textContent}\n`;
                 });
                 
                 const blob = new Blob([dorkText], { type: 'text/plain' });
@@ -586,6 +706,8 @@
                     document.body.removeChild(a);
                     URL.revokeObjectURL(url);
                 }, 100);
+                
+                showNotification('Dorks exported to google_dorks.txt');
             });
         });
     </script>
